@@ -19,7 +19,7 @@ var server = http.createServer(function(request, response){
 
     //
     if( path == '/'){
-        response.setHeader('content-type', 'text/html, charset=utf-8');
+        response.setHeader('Content-Type', 'text/html; charset=utf-8')
         response.write('<!DOCTYPE>' + 
             '<head>' +
             '<link rel="stylesheet" href="/style.css">' +
@@ -33,11 +33,11 @@ var server = http.createServer(function(request, response){
         );
         response.end();
     }else if( path == '/style.css'){
-        response.setHeader('content-type', 'text/css, charset=utf-8');
+        response.setHeader('Content-Type', 'text/css; charset=utf-8');
         response.write('body{background-color : black} p{color : red}');
         response.end();
     }else if( path == '/main.js'){
-        response.setHeader('content-type', 'text/js, charset=utf-8');
+        response.setHeader('Content-Type', 'text/js; charset=utf-8');
         response.write( 
             'var changeBodyColor = () =>{document.body.style.background = "green";}'
         );
